@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, minimum-scale=1, user-scalable=false" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://animaapp.s3.amazonaws.com/launchpad-static/launchpad.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="author" content="AnimaApp.com - Design to code, Automated." />
+    <title>Horizon Dreams</title>
+</head>
+<body>
+    <main class="animate-enter">
+        <section class="hero">
+            <div class="wrapper">
+                <div class="bg">
+                    <img class="home-C61RwL" src="img/landing-home-291E733B-752E-4594-A2F7-2AD2D98CC580.png" />
+                </div>
+                <div class="logo">
+                    <img
+                        class="horizon-dreams-C61RwL"
+                        src="img/landing-horizon-dreams-4B06DFD9-09AE-40BB-B778-80343315E6DF@2x.png"
+                        />
+                </div>
+                <div class="title">
+                    Tech + Audio
+                </div>
+                <div class="subtitle">
+                    distributing high quality <br />content circa 2010
+                </div>
+                <div class="scroller">
+                    <a href="#about">
+                        <div class="more-C61RwL smart-layers-pointers">
+                          <div class="more-etZmfS">MORE</div>
+                          <div class="arrow-etZmfS">
+                            <div class="btn-copy-c2ndA5">
+                              <img
+                                class="combined-shape-oKlWqo"
+                                src="img/landing-combined-shape-3AE5F218-9598-4126-95CE-C33F5451B649@2x.png"
+                              />
+                              <img class="line-4-oKlWqo" src="img/landing-line-4-106469F2-EED9-4138-8715-E7541DB2715C@2x.png" />
+                              <img
+                                class="line-4-copy-oKlWqo"
+                                src="img/landing-line-4-copy-426ED398-949B-4175-A1DA-53BA7E4BC3AE@2x.png"
+                              />
+                            </div>
+                          </div></div
+                      ></a>
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="about-C61RwL" id="about">
+                <video
+                  src="https://anima-uploads.s3.amazonaws.com/projects/609ab45a9a2f09f35bb774c9/files/bg-horizon.mov"
+                  loop
+                  autoplay="autoplay"
+                  playsinline
+                  muted
+                ></video>
+              </div>
+              <div class="about_inner"show-on-scroll>
+                <div class="about_title" show-on-scroll>About Us</div>
+                <div class="about_para" show-on-scroll>
+                  Initially a dance label in the late 90’s we felt the need to elevate technology in the music industry,
+                  through technology and high level partnerships we managed to simplify and optimize the concept of digital
+                  audio releasing. By the means of aggregation and distribution we’ve gathered a roster of 1M+ tracks and over
+                  100 k albums distributed through our network. Through our diverse&nbsp;&nbsp;collection of&nbsp;&nbsp;brands
+                  we continue to push the envelope and develop backend solutions for our partners.
+                </div>
+              </div>
+        </section>
+        <section class="contact">
+          <form  name="form1" action="form1" method="post">
+            <div class="name">
+                <span>NAME</span>
+                <input name="textyourname"
+                placeholder="Your Name"
+                type="text"
+                required>
+            </div>
+            <div class="email">
+                <span>EMAIL</span>
+                <input name="textyouremail"
+                placeholder="Your Email"
+                type="email"
+                required>
+            </div>
+            <div class="message">
+                <span>MESSAGE</span>
+                <textarea name="textyourmessage"
+                placeholder="Your Message"
+                type="text"
+                required></textarea>
+            </div>
+            <a href="javascript:SubmitForm('form1')" class="button">
+              <button type="submit">SEND</button>
+            </a>
+          </form>
+        </section>
+        <div class="footer">
+          <img
+            class="horizon-dreams-VMr6Om"
+            src="img/landing-horizon-dreams-EFB2D75B-B6D9-4147-81F3-1F37885E5E3C@2x.png"
+          />
+          <p class="copyright-2021-al-C61RwL">Copyright © 2021. All Rights Reserved By Horizon Dreams Inc.</p>
+        </div>
+    </main>
+
+
+    <script>
+      function ShowOnScroll() {
+        this.toShow = [];
+        this.nextEventY = undefined;
+      }
+
+      ShowOnScroll.prototype.show = function (e) {
+        e.style.display = "";
+      };
+
+      ShowOnScroll.prototype.hide = function (e) {
+        e.style.display = "none";
+      };
+
+      ShowOnScroll.prototype.getTop = function (e) {
+        if (e.Top != undefined && e.Top != 0) {
+          return e.Top;
+        }
+        var top = 0;
+        var iter = e;
+        do {
+          top += iter.offsetTop || 0;
+          iter = iter.offsetParent;
+        } while (iter);
+        e.Top = top;
+        return top;
+      };
+
+      ShowOnScroll.prototype.onScroll = function () {
+        var screenBottom = window.pageYOffset + window.innerHeight;
+        if (this.nextEventY == undefined || this.nextEventY > screenBottom) {
+          return;
+        }
+        this.nextEventY = undefined;
+        for (var i = 0; i < this.toShow.length; i++) {
+          var e = this.toShow[i];
+          var top = this.getTop(e);
+          if (top < screenBottom) {
+            this.show(e);
+            this.toShow.shift();
+            i--;
+          } else {
+            this.nextEventY = top;
+            break;
+          }
+        }
+      };
+
+      ShowOnScroll.prototype.resetScrolling = function () {
+        // Clear state
+        var screenBottom = window.pageYOffset + window.innerHeight;
+        for (var i = 0; i < this.toShow.length; i++) {
+          var e = this.toShow[i];
+          this.show(e);
+        }
+        this.toShow = [];
+        this.nextEventY == undefined;
+
+        // Collect items
+        var itemsToShowOnScroll = Array.prototype.slice.call(document.getElementsByTagName("*"));
+        itemsToShowOnScroll = itemsToShowOnScroll.filter(function (e) {
+          return e.getAttribute("show-on-scroll") != undefined;
+        });
+        var getTop = this.getTop;
+        itemsToShowOnScroll.sort(function (a, b) {
+          return getTop(a) - getTop(b);
+        });
+        for (var i = 0; i < itemsToShowOnScroll.length; i++) {
+          var e = itemsToShowOnScroll[i];
+          var top = this.getTop(e);
+          if (top < screenBottom) {
+            continue;
+          }
+          this.toShow.push(e);
+          this.hide(e);
+          this.nextEventY = this.nextEventY != undefined ? this.nextEventY : top;
+        }
+      };
+
+      ShowOnScroll.prototype.handleEvent = function (e) {
+        switch (e.type) {
+          case "scroll":
+            this.onScroll();
+            break;
+          case "resize":
+            this.resetScrolling();
+            break;
+        }
+      };
+
+      ShowOnScroll.prototype.init = function () {
+        this.resetScrolling();
+        window.addEventListener("scroll", this);
+        window.addEventListener("resize", this);
+      };
+
+      // After anima-src
+      setTimeout(function () {
+        var instShowOnScroll = new ShowOnScroll();
+        instShowOnScroll.init();
+      }, 250);
+    </script>
+    <script>
+      /* Copyright (c) 2016 Tobias Buschor https://goo.gl/gl0mbf | MIT License https://goo.gl/HgajeK */
+
+      if (!HTMLFormElement.prototype.reportValidity) {
+        HTMLFormElement.prototype.reportValidity = function () {
+          if (this.checkValidity()) return true;
+          var btn = document.createElement("button");
+          this.appendChild(btn);
+          btn.click();
+          this.removeChild(btn);
+          return false;
+        };
+      }
+
+      function SubmitForm(form_name) {
+        var form = document.getElementsByName(form_name)[0];
+        if (form.reportValidity()) {
+          form.submit();
+          if (window.submitted) window.submitted();
+        }
+      }
+    </script>
+</body>
+</html>
